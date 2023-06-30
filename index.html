@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Выбор сложности</title>
+    <link rel="stylesheet" href="/fonts/stratosskyengweb-regular.woff">
+    <link rel="stylesheet" href="/fonts/stratosskyengweb-regular.woff2">
+
 </head>
 <body>
     <div class="container">
         <div class="level_block">
             <h2 class="title">Выбери сложность</h2>
-            <div class="select_block">
-                <div class="level_options">1</div>
-                <div class="level_options">2</div>
-                <div class="level_options">3</div>
+            <div class="radio_block">
+                <input type="radio" class="level_options" name="radios" id="radio_1" value="1">
+                <label class="radio_label" for="radio_1">1</label>
+
+                <input type="radio" class="level_options" name="radios" id="radio_2" value="2">
+                <label class="radio_label" for="radio_2">2</label>
+
+                <input type="radio" class="level_options" name="radios" id="radio_3" value="3">
+                <label class="radio_label" for="radio_3">3</label>
             </div>
             <button class="start_button">Старт</button>
         </div>
