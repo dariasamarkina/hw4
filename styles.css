@@ -96,3 +96,466 @@ body {
 .start_button:hover{
     background-color: #85cb0b;
 }
+
+.game_container {
+    width: 975px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--blue-120, #004980);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.game_header {
+    display: flex;
+    gap: 578px;
+    justify-content: space-between;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+    width: 155px;
+    height: 91px;
+}
+
+.timer_header {
+    color: #FFF;
+    height: 32px;
+    font-size: 16px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    display: flex;
+    gap: 57px;
+    justify-content: flex-end;
+    margin-left: 60px;
+}
+
+.timer_clock {
+    color: #FFF;
+    font-size: 64px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    width: 155px;
+    height: 72px;
+    margin-left: 4px;
+}
+
+.timer_clock_indicator,
+timer_min,
+timer_sec {
+    margin: 0;
+}
+
+.restart_button {
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    border: 0px;
+    background: var(--salad-60, #7AC100);
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-top: 32px;
+    margin-right: 23px;
+}
+
+.restart_button:hover{
+    background-color: #85cb0b;
+}
+
+.game_field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 975px;
+    align-content: center;
+    margin-left: 26px;
+    margin-right: 23px;
+    justify-items: center;
+}
+
+.back {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/back.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_ace {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesAce.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_king {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesKing.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_queen {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesQueen.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_jack {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesJack.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_ten {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesTen.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_nine {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesNine.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_eight {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesEight.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_seven {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesSeven.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.spades_six {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/spadesSix.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_ace {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsAce.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_king {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsKing.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_queen {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsQueen.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_jack {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsJack.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_ten {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsTen.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_nine {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsNine.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_eight {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsEight.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_seven {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsSeven.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.hearts_six {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/heartsSix.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_ace {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsAce.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_king {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsKing.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_queen {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsQueen.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_jack {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsJack.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_ten {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsTen.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_nine {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsNine.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_eight {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsEight.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_seven {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsSeven.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.diamonds_six {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/diamondsSix.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_ace {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsAce.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_king {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsKing.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_queen {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsQueen.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_jack {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsJack.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_ten {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsTen.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_nine {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsNine.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_eight {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsEight.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_seven {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsSeven.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+.clubs_six {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url(./images/clubsSix.jpg);
+    margin: 0;
+    padding: 0;
+}

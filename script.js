@@ -1,7 +1,7 @@
 const container = document.querySelector('.container');
 let startHtml = ``;
 
-function renderStartPage () {
+function renderStartPage() {
     startHtml = `
         <div class="level_block">
             <h2 class="title">Выбери сложность</h2>
@@ -16,7 +16,7 @@ function renderStartPage () {
                 <label class="radio_label" for="radio_3">3</label>
             </div>
             <button class="start_button">Старт</button>
-        </div>`
+        </div>`;
 
     container.innerHTML = startHtml;
 }
@@ -29,7 +29,6 @@ const radios = document.querySelectorAll('.level_options');
 let selectedLevel = 0;
 
 startBtn.addEventListener('click', () => {
-
     for (const radio of radios) {
         if (radio.checked === true) {
             selectedLevel = radio.value;
@@ -38,13 +37,13 @@ startBtn.addEventListener('click', () => {
 
     console.log(selectedLevel);
     renderGamePage(selectedLevel);
-})
+});
 
 function renderGamePage(level) {
     container.innerHTML = ``;
-    gamePageHtml = `
+    const gamePageHtml = `
         <div class="level_block">
             <h2 class="title">Уровень сложности: ${level}</h2>   
-        </div>`
-        container.innerHTML = gamePageHtml;
+        </div>`;
+    container.innerHTML = gamePageHtml;
 }
