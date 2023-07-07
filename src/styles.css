@@ -1,9 +1,8 @@
 @font-face {
-    font-family: 'StratosSkyeng';
-    src: url("/fonts/stratosskyengweb-regular.woff2"), 
-        url("/fonts/stratosskyengweb-regular.woff");
+    font-family: StratosSkyeng;
+    src: url('/fonts/stratosskyengweb-regular.woff2'),
+        url('/fonts/stratosskyengweb-regular.woff');
     font-style: normal;
-
 }
 
 body {
@@ -27,14 +26,14 @@ body {
     width: 480px;
     height: 460px;
     border-radius: 12px;
-    background: #C2F5FF;
+    background: #c2f5ff;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .title {
-    font-family: 'StratosSkyeng';
+    font-family: StratosSkyeng;
     color: #004980;
     text-align: center;
     font-size: 40px;
@@ -44,7 +43,7 @@ body {
     margin-bottom: 48px;
 }
 
-.radio_block{
+.radio_block {
     display: flex;
     gap: 26px;
     justify-content: center;
@@ -61,44 +60,43 @@ body {
     flex-direction: column;
     justify-content: center;
     border-radius: 12px;
-    background: #FFF;
-    color: var(--blue-100, #0080C1);
+    background: #fff;
+    color: var(--blue-100, #0080c1);
     text-align: center;
     font-size: 64px;
-    font-family: 'StratosSkyeng';
+    font-family: StratosSkyeng;
     line-height: 72px;
     margin-bottom: 67px;
     box-sizing: border-box;
 }
 
 .radio_label:hover {
-    border: 2px solid #0080C1;
+    border: 2px solid #0080c1;
 }
 
-.level_options:checked+.radio_label {
-    border: 2px solid #0080C1;
+.level_options:checked + .radio_label {
+    border: 2px solid #0080c1;
 }
 
 .start_button {
     border-radius: 12px;
-    border: 0px;
-    background: var(--salad-60, #7AC100);
+    border: 0;
+    background: var(--salad-60, #7ac100);
     width: 246px;
     height: 48px;
-    color: #FFF;
-    font-family: 'StratosSkyeng';
+    color: #fff;
+    font-family: StratosSkyeng;
     text-align: center;
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 48px;
 }
 
-.start_button:hover{
+.start_button:hover {
     background-color: #85cb0b;
 }
 
 .game_container {
-    width: 975px;
     position: fixed;
     top: 0;
     left: 0;
@@ -127,7 +125,7 @@ body {
 }
 
 .timer_header {
-    color: #FFF;
+    color: #fff;
     height: 32px;
     font-size: 16px;
     font-family: StratosSkyeng;
@@ -141,7 +139,7 @@ body {
 }
 
 .timer_clock {
-    color: #FFF;
+    color: #fff;
     font-size: 64px;
     font-family: StratosSkyeng;
     font-style: normal;
@@ -162,9 +160,9 @@ timer_sec {
     width: 246px;
     height: 50px;
     border-radius: 12px;
-    border: 0px;
-    background: var(--salad-60, #7AC100);
-    color: #FFF;
+    border: 0;
+    background: var(--salad-60, #7ac100);
+    color: #fff;
     text-align: center;
     font-size: 24px;
     font-family: StratosSkyeng;
@@ -175,7 +173,7 @@ timer_sec {
     margin-right: 23px;
 }
 
-.restart_button:hover{
+.restart_button:hover {
     background-color: #85cb0b;
 }
 
@@ -195,7 +193,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/back.jpg);
+    background-image: url('./images/back.jpg');
     margin: 0;
     padding: 0;
 }
@@ -205,7 +203,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesAce.jpg);
+    background-image: url('./images/spadesAce.jpg');
     margin: 0;
     padding: 0;
 }
@@ -215,7 +213,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesKing.jpg);
+    background-image: url('./images/spadesKing.jpg');
     margin: 0;
     padding: 0;
 }
@@ -225,7 +223,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesQueen.jpg);
+    background-image: url('./images/spadesQueen.jpg');
     margin: 0;
     padding: 0;
 }
@@ -235,7 +233,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesJack.jpg);
+    background-image: url('./images/spadesJack.jpg');
     margin: 0;
     padding: 0;
 }
@@ -245,7 +243,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesTen.jpg);
+    background-image: url('./images/spadesTen.jpg');
     margin: 0;
     padding: 0;
 }
@@ -255,7 +253,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesNine.jpg);
+    background-image: url('./images/spadesNine.jpg');
     margin: 0;
     padding: 0;
 }
@@ -265,7 +263,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesEight.jpg);
+    background-image: url('./images/spadesEight.jpg');
     margin: 0;
     padding: 0;
 }
@@ -275,7 +273,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesSeven.jpg);
+    background-image: url('./images/spadesSeven.jpg');
     margin: 0;
     padding: 0;
 }
@@ -285,7 +283,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/spadesSix.jpg);
+    background-image: url('./images/spadesSix.jpg');
     margin: 0;
     padding: 0;
 }
@@ -295,7 +293,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsAce.jpg);
+    background-image: url('./images/heartsAce.jpg');
     margin: 0;
     padding: 0;
 }
@@ -305,7 +303,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsKing.jpg);
+    background-image: url('./images/heartsKing.jpg');
     margin: 0;
     padding: 0;
 }
@@ -315,7 +313,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsQueen.jpg);
+    background-image: url('./images/heartsQueen.jpg');
     margin: 0;
     padding: 0;
 }
@@ -325,7 +323,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsJack.jpg);
+    background-image: url('./images/heartsJack.jpg');
     margin: 0;
     padding: 0;
 }
@@ -335,7 +333,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsTen.jpg);
+    background-image: url('./images/heartsTen.jpg');
     margin: 0;
     padding: 0;
 }
@@ -345,7 +343,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsNine.jpg);
+    background-image: url('./images/heartsNine.jpg');
     margin: 0;
     padding: 0;
 }
@@ -355,7 +353,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsEight.jpg);
+    background-image: url('./images/heartsEight.jpg');
     margin: 0;
     padding: 0;
 }
@@ -365,7 +363,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsSeven.jpg);
+    background-image: url('./images/heartsSeven.jpg');
     margin: 0;
     padding: 0;
 }
@@ -375,7 +373,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/heartsSix.jpg);
+    background-image: url('./images/heartsSix.jpg');
     margin: 0;
     padding: 0;
 }
@@ -385,7 +383,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsAce.jpg);
+    background-image: url('./images/diamondsAce.jpg');
     margin: 0;
     padding: 0;
 }
@@ -395,7 +393,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsKing.jpg);
+    background-image: url('./images/diamondsKing.jpg');
     margin: 0;
     padding: 0;
 }
@@ -405,7 +403,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsQueen.jpg);
+    background-image: url('./images/diamondsQueen.jpg');
     margin: 0;
     padding: 0;
 }
@@ -415,7 +413,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsJack.jpg);
+    background-image: url('./images/diamondsJack.jpg');
     margin: 0;
     padding: 0;
 }
@@ -425,7 +423,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsTen.jpg);
+    background-image: url('./images/diamondsTen.jpg');
     margin: 0;
     padding: 0;
 }
@@ -435,7 +433,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsNine.jpg);
+    background-image: url('./images/diamondsNine.jpg');
     margin: 0;
     padding: 0;
 }
@@ -445,7 +443,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsEight.jpg);
+    background-image: url('./images/diamondsEight.jpg');
     margin: 0;
     padding: 0;
 }
@@ -455,7 +453,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsSeven.jpg);
+    background-image: url('./images/diamondsSeven.jpg');
     margin: 0;
     padding: 0;
 }
@@ -465,7 +463,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/diamondsSix.jpg);
+    background-image: url('./images/diamondsSix.jpg');
     margin: 0;
     padding: 0;
 }
@@ -475,7 +473,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsAce.jpg);
+    background-image: url('./images/clubsAce.jpg');
     margin: 0;
     padding: 0;
 }
@@ -485,7 +483,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsKing.jpg);
+    background-image: url('./images/clubsKing.jpg');
     margin: 0;
     padding: 0;
 }
@@ -495,7 +493,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsQueen.jpg);
+    background-image: url('./images/clubsQueen.jpg');
     margin: 0;
     padding: 0;
 }
@@ -505,7 +503,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsJack.jpg);
+    background-image: url('./images/clubsJack.jpg');
     margin: 0;
     padding: 0;
 }
@@ -515,7 +513,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsTen.jpg);
+    background-image: url('./images/clubsTen.jpg');
     margin: 0;
     padding: 0;
 }
@@ -525,7 +523,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsNine.jpg);
+    background-image: url('./images/clubsNine.jpg');
     margin: 0;
     padding: 0;
 }
@@ -535,7 +533,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsEight.jpg);
+    background-image: url('./images/clubsEight.jpg');
     margin: 0;
     padding: 0;
 }
@@ -545,7 +543,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsSeven.jpg);
+    background-image: url('./images/clubsSeven.jpg');
     margin: 0;
     padding: 0;
 }
@@ -555,7 +553,7 @@ timer_sec {
     height: 133px;
     flex-shrink: 0;
     border-radius: 4px;
-    background-image: url(./images/clubsSix.jpg);
+    background-image: url('./images/clubsSix.jpg');
     margin: 0;
     padding: 0;
 }
