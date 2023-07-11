@@ -42,6 +42,7 @@ const radios = document.querySelectorAll('.level_options');
 
 let selectedLevel = 0;
 
+// получаем кол-во пар карт в зависимости от уровня
 startBtn.addEventListener('click', () => {
     for (const radio of radios) {
         if (radio.checked === true) {
@@ -84,15 +85,13 @@ function renderGamePage(quantity) {
                 </div>`;
     let cardsSet = [];
 
+    // заполняем массив парами карт
     for (let i = 0; i < quantity; i++) {
         const randomSuit = Math.floor(Math.random() * 4);
         const randomRank = Math.floor(Math.random() * 9);
 
         const firstEl = '../images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
-
         const secondEl = '../images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
-
-        // container.classList.add('game_field');
         cardsSet.push(firstEl, secondEl);
     }
 
@@ -102,6 +101,7 @@ function renderGamePage(quantity) {
     shuffle(cardsSet);
     shuffle(cardsSet);
 
+    // перемешиваем массив
     function shuffle(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1)); 
@@ -111,12 +111,24 @@ function renderGamePage(quantity) {
 
     const gameField = document.querySelector('.game_field');
 
+    // отображаем перемешанные карты
     for (let i = 0; i < cardsSet.length; i++) {
         const elem = document.createElement('img');
         elem.src = cardsSet[i];
         elem.classList.add('card');
-        gameField.appendChild(elem);    
+        gameField.appendChild(elem);   
+         
+    }
+    const cards = document.querySelectorAll('.card');
+
+    function hideCards () {
+        cards.forEach(card => {
+            card.src = '../images/back.jpg';
+        });
+
     }
 
-    
+    setTimeout(hideCards, 5000);
 }
+
+
