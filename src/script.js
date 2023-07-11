@@ -1,6 +1,19 @@
 const container = document.querySelector('.container');
 let startHtml = ``;
 
+const suits = ['clubs', 'diamonds', 'hearts', 'spades'];
+const ranks = [
+    'Ace',
+    'King',
+    'Queen',
+    'Jack',
+    'Ten',
+    'Nine',
+    'Eight',
+    'Seven',
+    'Six',
+];
+
 function renderStartPage() {
     startHtml = `
         <div class="level_block">
@@ -36,14 +49,49 @@ startBtn.addEventListener('click', () => {
     }
 
     console.log(selectedLevel);
-    renderGamePage(selectedLevel);
+    let cardsQuantity = 0;
+
+    if (selectedLevel == 1) {
+        cardsQuantity === 6;
+    } else if (selectedLevel == 2) {
+        cardsQuantity === 12;
+    } else if (selectedLevel == 3) {
+        cardsQuantity === 18;
+    }
+
+    renderGamePage(cardsQuantity);
 });
 
-function renderGamePage(level) {
+function renderGamePage(quantity) {
     container.innerHTML = ``;
-    const gamePageHtml = `
-        <div class="level_block">
-            <h2 class="title">Уровень сложности: ${level}</h2>   
-        </div>`;
-    container.innerHTML = gamePageHtml;
+    let cardsSet = [];
+
+    for (let i = 0; i < quantity; i++) {
+        const randomSuit = Math.floor(Math.random() * 4);
+        const randomRank = Math.floor(Math.random() * 9);
+
+        const cardPath =
+            '../images' + suits[randomSuit] + ranks[randomRank] + '.jpg';
+
+        const cardEl = document.createElement('IMG');
+        cardEl.src = cardPath;
+        cardEl.classList.add('card');
+
+        container.appendChild(cardEl);
+        cardsSet.push(cardEl);
+    }
+
+    const firtsCard = Math.floor(Math.random() * quantity);
+    let secondCard = firtsCard;
+
+    while (secondCard === firtsCard) {
+        secondCard = Math.floor(Math.random() * quantity);
+    }
+
+    cardsSet[secondCard].src = cardsSet[firtsCard].src;
+
+    // const body = document.querySelector('body');
+    // body.appendChild(cardGameField);
+
+    setTimeout(hideCards, 5000);
 }
