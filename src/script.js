@@ -64,7 +64,8 @@ startBtn.addEventListener('click', () => {
 
 function renderGamePage(quantity) {
     container.innerHTML = `
-            <div class="game_header">
+                <div class="game_container">
+                    <div class="game_header">
                     <div class="timer">
                         <div class="timer_header">
                             <p class="timer_min">min</p>
@@ -74,10 +75,12 @@ function renderGamePage(quantity) {
                             <p class="timer_clock_indicator">00.00</p>
                         </div>
                     </div>
-            
+
                     <div class="restart">
                         <button class="restart_button">Начать заново</button>
                     </div>
+                </div>
+                <div class="game_field">
                 </div>`;
     let cardsSet = [];
 
@@ -89,10 +92,12 @@ function renderGamePage(quantity) {
 
         const secondEl = '../images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
 
-        container.classList.add('game_field');
+        // container.classList.add('game_field');
         cardsSet.push(firstEl, secondEl);
     }
 
+    shuffle(cardsSet);
+    shuffle(cardsSet);
     shuffle(cardsSet);
     shuffle(cardsSet);
     shuffle(cardsSet);
@@ -104,11 +109,13 @@ function renderGamePage(quantity) {
           }
     }
 
+    const gameField = document.querySelector('.game_field');
+
     for (let i = 0; i < cardsSet.length; i++) {
         const elem = document.createElement('img');
         elem.src = cardsSet[i];
         elem.classList.add('card');
-        container.appendChild(elem);    
+        gameField.appendChild(elem);    
     }
 
     
