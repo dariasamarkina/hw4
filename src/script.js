@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const container = document.querySelector('.container');
 let startHtml = ``;
 
@@ -48,50 +49,67 @@ startBtn.addEventListener('click', () => {
         }
     }
 
-    console.log(selectedLevel);
     let cardsQuantity = 0;
 
-    if (selectedLevel == 1) {
-        cardsQuantity === 6;
-    } else if (selectedLevel == 2) {
-        cardsQuantity === 12;
-    } else if (selectedLevel == 3) {
-        cardsQuantity === 18;
+    if (selectedLevel === '1') {
+        cardsQuantity = 3;
+    } else if (selectedLevel === '2') {
+        cardsQuantity = 6;
+    } else if (selectedLevel === '3') {
+        cardsQuantity = 9;
     }
 
     renderGamePage(cardsQuantity);
 });
 
 function renderGamePage(quantity) {
-    container.innerHTML = ``;
+    container.innerHTML = `
+            <div class="game_header">
+                    <div class="timer">
+                        <div class="timer_header">
+                            <p class="timer_min">min</p>
+                            <p class="timer_sec">sec</p>
+                        </div>
+                        <div class="timer_clock">
+                            <p class="timer_clock_indicator">00.00</p>
+                        </div>
+                    </div>
+            
+                    <div class="restart">
+                        <button class="restart_button">Начать заново</button>
+                    </div>
+                </div>`;
     let cardsSet = [];
 
     for (let i = 0; i < quantity; i++) {
         const randomSuit = Math.floor(Math.random() * 4);
         const randomRank = Math.floor(Math.random() * 9);
 
-        const cardPath =
-            '../images' + suits[randomSuit] + ranks[randomRank] + '.jpg';
+        const firstEl = '../images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
 
-        const cardEl = document.createElement('IMG');
-        cardEl.src = cardPath;
-        cardEl.classList.add('card');
+        const secondEl = '../images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
 
-        container.appendChild(cardEl);
-        cardsSet.push(cardEl);
+        container.classList.add('game_field');
+        cardsSet.push(firstEl, secondEl);
     }
 
-    const firtsCard = Math.floor(Math.random() * quantity);
-    let secondCard = firtsCard;
+    shuffle(cardsSet);
+    shuffle(cardsSet);
+    shuffle(cardsSet);
 
-    while (secondCard === firtsCard) {
-        secondCard = Math.floor(Math.random() * quantity);
+    function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1)); 
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+          }
     }
 
-    cardsSet[secondCard].src = cardsSet[firtsCard].src;
+    for (let i = 0; i < cardsSet.length; i++) {
+        const elem = document.createElement('img');
+        elem.src = cardsSet[i];
+        elem.classList.add('card');
+        container.appendChild(elem);    
+    }
 
-    // const body = document.querySelector('body');
-    // body.appendChild(cardGameField);
-
-    setTimeout(hideCards, 5000);
+    
 }

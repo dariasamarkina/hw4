@@ -1,3 +1,6 @@
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable prettier/prettier */
 @font-face {
     font-family: StratosSkyeng;
     src: url('/fonts/stratosskyengweb-regular.woff2'),
