@@ -110,7 +110,7 @@ function renderGamePage(quantity) {
     }
 
     const gameField = document.querySelector('.game_field');
-
+    
     // отображаем перемешанные карты
     for (let i = 0; i < cardsSet.length; i++) {
         const elem = document.createElement('img');
@@ -121,14 +121,49 @@ function renderGamePage(quantity) {
     }
     const cards = document.querySelectorAll('.card');
 
+    // скрываем карты через 5сек
     function hideCards () {
         cards.forEach(card => {
             card.src = '../images/back.jpg';
         });
-
     }
 
     setTimeout(hideCards, 5000);
+    compareCards();
+
+    
+
+
+    function compareCards() {
+        let firstCard = '';
+        let secondCard = '';
+        let result = '';
+    
+        for (let i = 0; i < cards.length; i++) {
+            const card = cards[i];
+                card.addEventListener('click', (e) => {
+                    const target = e.target;
+                    target.src = cardsSet[i];
+                    if (!firstCard) {
+                        firstCard = cardsSet[i];
+                    } else {
+                        secondCard = cardsSet[i];
+    
+                        if (firstCard === secondCard) {
+                            result = true;
+                            alert('Вы выиграли');
+                        } else {
+                            result = false;
+                            alert('Вы проиграли');
+                        }
+                        return result;
+                    }
+                })   
+        }
+    }
 }
+
+
+
 
 
