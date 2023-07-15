@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+import  { compareCards } from "./compareCards.js"
+
 const container = document.querySelector('.container');
 let startHtml = ``;
 
@@ -129,38 +131,7 @@ function renderGamePage(quantity) {
     }
 
     setTimeout(hideCards, 5000);
-    compareCards();
-
-    
-
-
-    function compareCards() {
-        let firstCard = '';
-        let secondCard = '';
-        let result = '';
-    
-        for (let i = 0; i < cards.length; i++) {
-            const card = cards[i];
-                card.addEventListener('click', (e) => {
-                    const target = e.target;
-                    target.src = cardsSet[i];
-                    if (!firstCard) {
-                        firstCard = cardsSet[i];
-                    } else {
-                        secondCard = cardsSet[i];
-    
-                        if (firstCard === secondCard) {
-                            result = true;
-                            alert('Вы выиграли');
-                        } else {
-                            result = false;
-                            alert('Вы проиграли');
-                        }
-                        return result;
-                    }
-                })   
-        }
-    }
+    compareCards(cards, cardsSet);
 }
 
 
