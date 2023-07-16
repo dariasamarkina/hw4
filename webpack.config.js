@@ -33,7 +33,7 @@ module.exports = {
             patterns: [{ from: 'static', to: 'static' }],
         }),
         new HtmlWebpackPlugin({
-            template: './index.js',
+            template: './index.html',
         }),
     ],
 };

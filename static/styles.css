@@ -3,8 +3,8 @@
 /* stylelint-disable prettier/prettier */
 @font-face {
     font-family: StratosSkyeng;
-    src: url('/fonts/stratosskyengweb-regular.woff2'),
-        url('/fonts/stratosskyengweb-regular.woff');
+    src: url('/static/fonts/stratosskyengweb-regular.woff'),
+        url('/static/fonts/stratosskyengweb-regular.woff2');
     font-style: normal;
 }
 

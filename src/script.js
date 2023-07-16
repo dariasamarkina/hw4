@@ -132,18 +132,7 @@ function renderGamePage(quantity) {
 
     setTimeout(hideCards, 5000);
 
-    for (let i = 1; i = quantity; i++) {
-        compareCards(cards, cardsSet);
-        console.log(result);
-        if (i === quantity && result === true) {
-            alert('Вы выиграли')
-        } else if (result === true) {
-            continue;
-        } else if (result === false) {
-            alert('Вы проиграли');
-            break;
-        }
-    }
+    compareCards(cards, cardsSet);
 }
 
 

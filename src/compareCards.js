@@ -1,7 +1,7 @@
-export     function compareCards(cards, cardsSet) {
+export function compareCards(cards, cardsSet) {
     let firstCard = '';
     let secondCard = '';
-    let result = '';
+    let pairs = 0;
 
     // сравниваем выбранные карты и сообщаем результат
     for (let i = 0; i < cards.length; i++) {
@@ -15,14 +15,20 @@ export     function compareCards(cards, cardsSet) {
                     secondCard = cardsSet[i];
 
                     if (firstCard === secondCard) {
-                        result = true;
-                        console.log('Вы выиграли');
+                        pairs += 1;
+
+                        if (pairs === cardsSet.length/2) {
+                            alert('Вы выиграли!');
+                        }
+
                     } else {
-                        result = false;
-                        console.log('Вы проиграли');
+                        alert('Вы проиграли!');
                     }
-                    return result;
-                }
-            })   
+
+                    firstCard = '';
+                    secondCard = '';
+            }
+        })   
     }
 }
+ 
