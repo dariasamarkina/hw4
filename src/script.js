@@ -92,8 +92,8 @@ function renderGamePage(quantity) {
         const randomSuit = Math.floor(Math.random() * 4);
         const randomRank = Math.floor(Math.random() * 9);
 
-        const firstEl = '../images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
-        const secondEl = '../images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
+        const firstEl = '../static/images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
+        const secondEl = '../static/images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
         cardsSet.push(firstEl, secondEl);
     }
 
@@ -126,12 +126,24 @@ function renderGamePage(quantity) {
     // скрываем карты через 5сек
     function hideCards () {
         cards.forEach(card => {
-            card.src = '../images/back.jpg';
+            card.src = '../static/images/back.jpg';
         });
     }
 
     setTimeout(hideCards, 5000);
-    compareCards(cards, cardsSet);
+
+    for (let i = 1; i = quantity; i++) {
+        compareCards(cards, cardsSet);
+        console.log(result);
+        if (i === quantity && result === true) {
+            alert('Вы выиграли')
+        } else if (result === true) {
+            continue;
+        } else if (result === false) {
+            alert('Вы проиграли');
+            break;
+        }
+    }
 }
 
 

@@ -16,10 +16,10 @@ export     function compareCards(cards, cardsSet) {
 
                     if (firstCard === secondCard) {
                         result = true;
-                        alert('Вы выиграли');
+                        console.log('Вы выиграли');
                     } else {
                         result = false;
-                        alert('Вы проиграли');
+                        console.log('Вы проиграли');
                     }
                     return result;
                 }
