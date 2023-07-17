@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+import  { compareCards } from "./compareCards.js"
+
 const container = document.querySelector('.container');
 let startHtml = ``;
 
@@ -41,6 +44,7 @@ const radios = document.querySelectorAll('.level_options');
 
 let selectedLevel = 0;
 
+// получаем кол-во пар карт в зависимости от уровня
 startBtn.addEventListener('click', () => {
     for (const radio of radios) {
         if (radio.checked === true) {
@@ -48,50 +52,90 @@ startBtn.addEventListener('click', () => {
         }
     }
 
-    console.log(selectedLevel);
     let cardsQuantity = 0;
 
-    if (selectedLevel == 1) {
-        cardsQuantity === 6;
-    } else if (selectedLevel == 2) {
-        cardsQuantity === 12;
-    } else if (selectedLevel == 3) {
-        cardsQuantity === 18;
+    if (selectedLevel === '1') {
+        cardsQuantity = 3;
+    } else if (selectedLevel === '2') {
+        cardsQuantity = 6;
+    } else if (selectedLevel === '3') {
+        cardsQuantity = 9;
     }
 
     renderGamePage(cardsQuantity);
 });
 
 function renderGamePage(quantity) {
-    container.innerHTML = ``;
+    container.innerHTML = `
+                <div class="game_container">
+                    <div class="game_header">
+                    <div class="timer">
+                        <div class="timer_header">
+                            <p class="timer_min">min</p>
+                            <p class="timer_sec">sec</p>
+                        </div>
+                        <div class="timer_clock">
+                            <p class="timer_clock_indicator">00.00</p>
+                        </div>
+                    </div>
+
+                    <div class="restart">
+                        <button class="restart_button">Начать заново</button>
+                    </div>
+                </div>
+                <div class="game_field">
+                </div>`;
     let cardsSet = [];
 
+    // заполняем массив парами карт
     for (let i = 0; i < quantity; i++) {
         const randomSuit = Math.floor(Math.random() * 4);
         const randomRank = Math.floor(Math.random() * 9);
 
-        const cardPath =
-            '../images' + suits[randomSuit] + ranks[randomRank] + '.jpg';
-
-        const cardEl = document.createElement('IMG');
-        cardEl.src = cardPath;
-        cardEl.classList.add('card');
-
-        container.appendChild(cardEl);
-        cardsSet.push(cardEl);
+        const firstEl = '../static/images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
+        const secondEl = '../static/images/' + suits[randomSuit] + ranks[randomRank] + '.jpg';
+        cardsSet.push(firstEl, secondEl);
     }
 
-    const firtsCard = Math.floor(Math.random() * quantity);
-    let secondCard = firtsCard;
+    shuffle(cardsSet);
+    shuffle(cardsSet);
+    shuffle(cardsSet);
+    shuffle(cardsSet);
+    shuffle(cardsSet);
 
-    while (secondCard === firtsCard) {
-        secondCard = Math.floor(Math.random() * quantity);
+    // перемешиваем массив
+    function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1)); 
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+          }
     }
 
-    cardsSet[secondCard].src = cardsSet[firtsCard].src;
+    const gameField = document.querySelector('.game_field');
+    
+    // отображаем перемешанные карты
+    for (let i = 0; i < cardsSet.length; i++) {
+        const elem = document.createElement('img');
+        elem.src = cardsSet[i];
+        elem.classList.add('card');
+        gameField.appendChild(elem);   
+         
+    }
+    const cards = document.querySelectorAll('.card');
 
-    // const body = document.querySelector('body');
-    // body.appendChild(cardGameField);
+    // скрываем карты через 5сек
+    function hideCards () {
+        cards.forEach(card => {
+            card.src = '../static/images/back.jpg';
+        });
+    }
 
     setTimeout(hideCards, 5000);
+
+    compareCards(cards, cardsSet);
 }
+
+
+
+
+

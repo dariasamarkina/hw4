@@ -1,7 +1,10 @@
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable prettier/prettier */
 @font-face {
     font-family: StratosSkyeng;
-    src: url('/fonts/stratosskyengweb-regular.woff2'),
-        url('/fonts/stratosskyengweb-regular.woff');
+    src: url('/static/fonts/stratosskyengweb-regular.woff'),
+        url('/static/fonts/stratosskyengweb-regular.woff2');
     font-style: normal;
 }
 
@@ -107,7 +110,7 @@ body {
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .game_header {
@@ -181,11 +184,8 @@ timer_sec {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    width: 975px;
-    align-content: center;
-    margin-left: 26px;
-    margin-right: 23px;
-    justify-items: center;
+    width: 645px;
+    margin-top: 120px;
 }
 
 .back {
