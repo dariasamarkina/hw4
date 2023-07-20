@@ -9,6 +9,11 @@ export function compareCards(cards, cardsSet) {
     let spentTime = '';
 
     timerTimeout();
+    const restartBtn = document.querySelector('.restart_button');
+    restartBtn.addEventListener('click', () => {
+        clearTimeout(timerId);
+        renderStartPage();
+})
 
     // сравниваем выбранные карты и сообщаем результат
     for (let i = 0; i < cards.length; i++) {

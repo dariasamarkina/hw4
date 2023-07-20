@@ -35,11 +35,8 @@ export function renderStartPage() {
         </div>`;
 
     container.innerHTML = startHtml;
-}
 
-renderStartPage();
-
-const startBtn = document.querySelector('.start_button');
+    const startBtn = document.querySelector('.start_button');
 const radios = document.querySelectorAll('.level_options');
 
 let selectedLevel = 0;
@@ -64,6 +61,11 @@ startBtn.addEventListener('click', () => {
 
     renderGamePage(cardsQuantity);
 });
+}
+
+renderStartPage();
+
+
 
 function renderGamePage(quantity) {
     container.innerHTML = `
@@ -135,10 +137,7 @@ function renderGamePage(quantity) {
     setTimeout(hideCards, 5000);
     setTimeout(compareCards(cards, cardsSet), 5000);
 
-    const restartBtn = document.querySelector('.restart_button');
-    restartBtn.addEventListener('click', () => {
-            renderStartPage();
-})
+
 }
 
 
