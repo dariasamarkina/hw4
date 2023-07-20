@@ -136,8 +136,6 @@ function renderGamePage(quantity) {
 
     setTimeout(hideCards, 5000);
     setTimeout(compareCards(cards, cardsSet), 5000);
-
-
 }
 
 

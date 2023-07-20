@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { renderStartPage } from './script.js';
 
 export function compareCards(cards, cardsSet) {
@@ -9,11 +10,12 @@ export function compareCards(cards, cardsSet) {
     let spentTime = '';
 
     timerTimeout();
+    // перезапуск с экрана игры
     const restartBtn = document.querySelector('.restart_button');
     restartBtn.addEventListener('click', () => {
         clearTimeout(timerId);
         renderStartPage();
-})
+    });
 
     // сравниваем выбранные карты и сообщаем результат
     for (let i = 0; i < cards.length; i++) {
@@ -23,7 +25,7 @@ export function compareCards(cards, cardsSet) {
             target.src = cardsSet[i];
             const gameContainer = document.querySelector('.game_container');
             let gameHtml = gameContainer.innerHTML;
-            
+
             if (!firstCard) {
                 firstCard = cardsSet[i];
             } else {
@@ -43,14 +45,15 @@ export function compareCards(cards, cardsSet) {
                                 <h1 class="result_time">${spentTime}</h1>
                                 <button class="again_button">Играть снова</button>
                             </div>
-                        </div>`
+                        </div>`;
 
                         gameContainer.innerHTML = gameHtml;
 
-                        const restartGame = document.querySelector('.again_button');
+                        const restartGame =
+                            document.querySelector('.again_button');
                         restartGame.addEventListener('click', () => {
                             renderStartPage();
-                        })
+                        });
                     }
                 } else {
                     clearTimeout(timerId);
@@ -63,14 +66,14 @@ export function compareCards(cards, cardsSet) {
                             <h1 class="result_time">${spentTime}</h1>
                             <button class="again_button">Играть снова</button>
                         </div>
-                    </div>`
+                    </div>`;
 
                     gameContainer.innerHTML = gameHtml;
 
                     const restartGame = document.querySelector('.again_button');
-                        restartGame.addEventListener('click', () => {
-                            renderStartPage();
-                        })
+                    restartGame.addEventListener('click', () => {
+                        renderStartPage();
+                    });
                 }
 
                 firstCard = '';
@@ -83,33 +86,31 @@ export function compareCards(cards, cardsSet) {
     function handleTimer() {
         const sec = document.querySelector('.timer_clock_sec');
         const min = document.querySelector('.timer_clock_min');
-    
+
         sec.textContent++;
         if (sec.textContent <= 9) {
             sec.textContent = '0' + sec.textContent;
-        } 
-    
+        }
+
         if (sec.textContent >= 60) {
             min.textContent++;
             if (min.textContent < 10) {
                 min.textContent = '0' + min.textContent;
-            } 
+            }
             sec.textContent = '00';
         }
         spentTime = min.textContent + `.` + sec.textContent;
         return spentTime;
-        }
+    }
 
     // задаем интервал изменений значений на таймере = 1 сек
-    function timerInterval () {
+    function timerInterval() {
         timerId = setInterval(handleTimer, 1000);
-        return timerId;            
+        return timerId;
     }
-    
+
     // запуск таймера через 5сек
     function timerTimeout() {
         setTimeout(timerInterval, 5000);
     }
-
-    
 }

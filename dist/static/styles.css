@@ -1,0 +1,296 @@
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable prettier/prettier */
+@font-face {
+    font-family: StratosSkyeng;
+    src: url('/static/fonts/stratosskyengweb-regular.woff'),
+        url('/static/fonts/stratosskyengweb-regular.woff2');
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--blue-120, #004980);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--blue-120, #004980);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.level_block {
+    width: 480px;
+    height: 460px;
+    border-radius: 12px;
+    background: #c2f5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: StratosSkyeng;
+    color: #004980;
+    text-align: center;
+    font-size: 40px;
+    line-height: 48px;
+    width: 208px;
+    margin-top: 52px;
+    margin-bottom: 48px;
+}
+
+.radio_block {
+    display: flex;
+    gap: 26px;
+    justify-content: center;
+}
+
+.level_options {
+    display: none;
+}
+
+.radio_label {
+    width: 97px;
+    height: 98px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    background: #fff;
+    color: var(--blue-100, #0080c1);
+    text-align: center;
+    font-size: 64px;
+    font-family: StratosSkyeng;
+    line-height: 72px;
+    margin-bottom: 67px;
+    box-sizing: border-box;
+}
+
+.radio_label:hover {
+    border: 2px solid #0080c1;
+}
+
+.level_options:checked + .radio_label {
+    border: 2px solid #0080c1;
+}
+
+.start_button {
+    border-radius: 12px;
+    border: 0;
+    background: var(--salad-60, #7ac100);
+    width: 246px;
+    height: 48px;
+    color: #fff;
+    font-family: StratosSkyeng;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 48px;
+}
+
+.start_button:hover {
+    background-color: #85cb0b;
+}
+
+.game_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--blue-120, #004980);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.game_header {
+    display: flex;
+    gap: 578px;
+    justify-content: space-between;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+    width: 155px;
+    height: 91px;
+}
+
+.timer_header {
+    color: #fff;
+    height: 32px;
+    font-size: 16px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 57px;
+    justify-content: flex-end;
+    margin-top: 22px
+}
+
+.timer_clock {
+    color: #fff;
+    font-size: 64px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    /* width: 155px;
+    height: 72px; */
+    /* margin-left: 4px; */
+    display: flex;
+    margin: 0px;
+}
+
+.timer_min,
+.timer_sec,
+.timer_clock_min,
+.timer_clock_point,
+.timer_clock_sec {
+    margin: 0px;
+    padding: 0px;
+}
+
+.restart_button {
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    border: 0;
+    background: var(--salad-60, #7ac100);
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-top: 32px;
+    margin-right: 23px;
+}
+
+.restart_button:hover {
+    background-color: #85cb0b;
+}
+
+.game_field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 645px;
+    margin-top: 120px;
+}
+
+.back {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-image: url('../images/back.jpg');
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 95px;
+    height: 133px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.result_container {
+    opacity: 0.9;
+}
+
+.result_block {
+    width: 480px;
+    height: 460px;
+    border-radius: 12px;
+    background: #c2f5ff;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result_image {
+    width: 96px;
+    height: 96px;
+    margin-top: 26px;
+}
+
+.result_title {
+    font-family: StratosSkyeng;
+    color: #004980;
+    text-align: center;
+    font-size: 40px;
+    line-height: 48px;
+    width: 280px;
+    margin-bottom: 28px;
+    margin-top: 8px;
+}
+
+.result_message {
+    color: #000;
+    font-family: StratosSkyeng;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.result_time {
+    color: #000;
+    font-family: StratosSkyeng;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.again_button {
+    border-radius: 12px;
+    border: 0;
+    background: var(--salad-60, #7ac100);
+    width: 246px;
+    height: 48px;
+    color: #fff;
+    font-family: StratosSkyeng;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 40px;
+    margin-right: 0;
+}
