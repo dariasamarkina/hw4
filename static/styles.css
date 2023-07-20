@@ -25,6 +25,19 @@ body {
     align-items: center;
 }
 
+.result_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--blue-120, #004980);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
 .level_block {
     width: 480px;
     height: 460px;
@@ -213,11 +226,16 @@ body {
     padding: 0;
 }
 
+.result_container {
+    opacity: 0.9;
+}
+
 .result_block {
     width: 480px;
     height: 460px;
     border-radius: 12px;
     background: #c2f5ff;
+    opacity: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,7 +245,6 @@ body {
     width: 96px;
     height: 96px;
     margin-top: 26px;
-    margin-bottom: 8px;
 }
 
 .result_title {
@@ -236,8 +253,9 @@ body {
     text-align: center;
     font-size: 40px;
     line-height: 48px;
-    width: 256px;
+    width: 280px;
     margin-bottom: 28px;
+    margin-top: 8px;
 }
 
 .result_message {
