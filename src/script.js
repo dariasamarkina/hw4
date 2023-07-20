@@ -17,7 +17,7 @@ const ranks = [
     'Six',
 ];
 
-function renderStartPage() {
+export function renderStartPage() {
     startHtml = `
         <div class="level_block">
             <h2 class="title">Выбери сложность</h2>
@@ -134,7 +134,14 @@ function renderGamePage(quantity) {
 
     setTimeout(hideCards, 5000);
     setTimeout(compareCards(cards, cardsSet), 5000);
+
+    const restartBtn = document.querySelector('.restart_button');
+    restartBtn.addEventListener('click', () => {
+            renderStartPage();
+})
 }
+
+
 
 
 

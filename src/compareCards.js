@@ -1,3 +1,5 @@
+import { renderStartPage } from './script.js';
+
 export function compareCards(cards, cardsSet) {
     console.log(typeof cardsSet);
     let firstCard = '';
@@ -26,7 +28,6 @@ export function compareCards(cards, cardsSet) {
                     pairs += 1;
 
                     if (pairs === cardsSet.length / 2) {
-                        alert('Вы выиграли!');
                         clearTimeout(timerId);
                         gameHtml += `
                         <div class="result_container">
@@ -40,9 +41,13 @@ export function compareCards(cards, cardsSet) {
                         </div>`
 
                         gameContainer.innerHTML = gameHtml;
+
+                        const restartGame = document.querySelector('.again_button');
+                        restartGame.addEventListener('click', () => {
+                            renderStartPage();
+                        })
                     }
                 } else {
-                    alert('Вы проиграли!');
                     clearTimeout(timerId);
                     gameHtml += `
                     <div class="result_container">
@@ -56,6 +61,11 @@ export function compareCards(cards, cardsSet) {
                     </div>`
 
                     gameContainer.innerHTML = gameHtml;
+
+                    const restartGame = document.querySelector('.again_button');
+                        restartGame.addEventListener('click', () => {
+                            renderStartPage();
+                        })
                 }
 
                 firstCard = '';
@@ -95,4 +105,6 @@ export function compareCards(cards, cardsSet) {
     function timerTimeout() {
         setTimeout(timerInterval, 5000);
     }
+
+    
 }
