@@ -136,9 +136,10 @@ body {
     font-weight: 400;
     line-height: 32px;
     display: flex;
+    align-items: center;
     gap: 57px;
     justify-content: flex-end;
-    margin-left: 60px;
+    margin-top: 22px
 }
 
 .timer_clock {
@@ -148,15 +149,20 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 72px;
-    width: 155px;
-    height: 72px;
-    margin-left: 4px;
+    /* width: 155px;
+    height: 72px; */
+    /* margin-left: 4px; */
+    display: flex;
+    margin: 0px;
 }
 
-.timer_clock_indicator,
-timer_min,
-timer_sec {
-    margin: 0;
+.timer_min,
+.timer_sec,
+.timer_clock_min,
+.timer_clock_point,
+.timer_clock_sec {
+    margin: 0px;
+    padding: 0px;
 }
 
 .restart_button {
@@ -207,362 +213,66 @@ timer_sec {
     padding: 0;
 }
 
-.spades_ace {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesAce.jpg');
-    margin: 0;
-    padding: 0;
+.result_block {
+    width: 480px;
+    height: 460px;
+    border-radius: 12px;
+    background: #c2f5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.spades_king {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesKing.jpg');
-    margin: 0;
-    padding: 0;
+.result_image {
+    width: 96px;
+    height: 96px;
+    margin-top: 26px;
+    margin-bottom: 8px;
 }
 
-.spades_queen {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesQueen.jpg');
-    margin: 0;
-    padding: 0;
+.result_title {
+    font-family: StratosSkyeng;
+    color: #004980;
+    text-align: center;
+    font-size: 40px;
+    line-height: 48px;
+    width: 256px;
+    margin-bottom: 28px;
 }
 
-.spades_jack {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesJack.jpg');
-    margin: 0;
-    padding: 0;
+.result_message {
+    color: #000;
+    font-family: StratosSkyeng;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
-.spades_ten {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesTen.jpg');
-    margin: 0;
-    padding: 0;
+.result_time {
+    color: #000;
+    font-family: StratosSkyeng;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
-.spades_nine {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesNine.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.spades_eight {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesEight.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.spades_seven {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesSeven.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.spades_six {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/spadesSix.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_ace {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsAce.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_king {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsKing.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_queen {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsQueen.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_jack {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsJack.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_ten {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsTen.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_nine {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsNine.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_eight {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsEight.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_seven {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsSeven.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.hearts_six {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/heartsSix.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_ace {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsAce.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_king {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsKing.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_queen {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsQueen.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_jack {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsJack.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_ten {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsTen.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_nine {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsNine.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_eight {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsEight.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_seven {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsSeven.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.diamonds_six {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/diamondsSix.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_ace {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsAce.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_king {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsKing.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_queen {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsQueen.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_jack {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsJack.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_ten {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsTen.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_nine {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsNine.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_eight {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsEight.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_seven {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsSeven.jpg');
-    margin: 0;
-    padding: 0;
-}
-
-.clubs_six {
-    width: 95px;
-    height: 133px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background-image: url('../images/clubsSix.jpg');
-    margin: 0;
-    padding: 0;
+.again_button {
+    border-radius: 12px;
+    border: 0;
+    background: var(--salad-60, #7ac100);
+    width: 246px;
+    height: 48px;
+    color: #fff;
+    font-family: StratosSkyeng;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 40px;
+    margin-right: 0;
 }

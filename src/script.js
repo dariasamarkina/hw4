@@ -75,7 +75,9 @@ function renderGamePage(quantity) {
                             <p class="timer_sec">sec</p>
                         </div>
                         <div class="timer_clock">
-                            <p class="timer_clock_indicator">00.00</p>
+                            <p class="timer_clock_min">00</p>
+                            <p class="timer_clock_point">.</p>
+                            <p class="timer_clock_sec">00</p>
                         </div>
                     </div>
 
@@ -131,8 +133,7 @@ function renderGamePage(quantity) {
     }
 
     setTimeout(hideCards, 5000);
-
-    compareCards(cards, cardsSet);
+    setTimeout(compareCards(cards, cardsSet), 5000);
 }
 
 
