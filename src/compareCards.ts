@@ -1,18 +1,18 @@
 /* eslint-disable prettier/prettier */
-import { renderStartPage } from './script.js';
+import { renderStartPage } from './script.ts';
 
-export function compareCards(cards, cardsSet) {
+export function compareCards(cards: any, cardsSet: any) {
     console.log(typeof cardsSet);
     let firstCard = '';
     let secondCard = '';
     let pairs = 0;
-    let timerId = '';
+    let timerId: number;
     let spentTime = '';
 
     timerTimeout();
     // перезапуск с экрана игры
     const restartBtn = document.querySelector('.restart_button');
-    restartBtn.addEventListener('click', () => {
+    restartBtn?.addEventListener('click', () => {
         clearTimeout(timerId);
         renderStartPage();
     });
@@ -24,7 +24,7 @@ export function compareCards(cards, cardsSet) {
             const target = e.target;
             target.src = cardsSet[i];
             const gameContainer = document.querySelector('.game_container');
-            let gameHtml = gameContainer.innerHTML;
+            let gameHtml = gameContainer?.innerHTML;
 
             if (!firstCard) {
                 firstCard = cardsSet[i];
@@ -51,7 +51,7 @@ export function compareCards(cards, cardsSet) {
 
                         const restartGame =
                             document.querySelector('.again_button');
-                        restartGame.addEventListener('click', () => {
+                        restartGame?.addEventListener('click', () => {
                             renderStartPage();
                         });
                     }
@@ -68,10 +68,10 @@ export function compareCards(cards, cardsSet) {
                         </div>
                     </div>`;
 
-                    gameContainer.innerHTML = gameHtml;
+                    gameContainer?.innerHTML? = gameHtml;
 
                     const restartGame = document.querySelector('.again_button');
-                    restartGame.addEventListener('click', () => {
+                    restartGame?.addEventListener('click', () => {
                         renderStartPage();
                     });
                 }
@@ -87,19 +87,19 @@ export function compareCards(cards, cardsSet) {
         const sec = document.querySelector('.timer_clock_sec');
         const min = document.querySelector('.timer_clock_min');
 
-        sec.textContent++;
-        if (sec.textContent <= 9) {
-            sec.textContent = '0' + sec.textContent;
+        sec?.textContent?++;
+        if (sec?.textContent? <= 9) {
+            sec?.textContent? = '0' + sec.textContent;
         }
 
-        if (sec.textContent >= 60) {
-            min.textContent++;
-            if (min.textContent < 10) {
-                min.textContent = '0' + min.textContent;
+        if (sec?.textContent? >= 60) {
+            min?.textContent?++;
+            if (min?.textContent? < 10) {
+                min?.textContent? = '0' + min.textContent;
             }
-            sec.textContent = '00';
+            sec?.textContent? = '00';
         }
-        spentTime = min.textContent + `.` + sec.textContent;
+        spentTime = min?.textContent? + `.` + sec?.textContent?;
         return spentTime;
     }
 

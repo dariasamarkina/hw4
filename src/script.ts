@@ -1,11 +1,12 @@
 /* eslint-disable prettier/prettier */
-import  { compareCards } from "./compareCards.js"
+import { Node } from "acorn";
+import  { compareCards } from "./compareCards.ts"
 
 const container = document.querySelector('.container');
-let startHtml = ``;
+let startHtml: string = ``;
 
-const suits = ['clubs', 'diamonds', 'hearts', 'spades'];
-const ranks = [
+const suits: string[] = ['clubs', 'diamonds', 'hearts', 'spades'];
+const ranks: string[] = [
     'Ace',
     'King',
     'Queen',
@@ -17,7 +18,7 @@ const ranks = [
     'Six',
 ];
 
-export function renderStartPage() {
+export function renderStartPage(): void {
     startHtml = `
         <div class="level_block">
             <h2 class="title">Выбери сложность</h2>
@@ -34,15 +35,15 @@ export function renderStartPage() {
             <button class="start_button">Старт</button>
         </div>`;
 
-    container.innerHTML = startHtml;
+    container?.innerHTML = startHtml;
 
     const startBtn = document.querySelector('.start_button');
-const radios = document.querySelectorAll('.level_options');
+    const radios: any = document.querySelectorAll('.level_options');
 
-let selectedLevel = 0;
+let selectedLevel: string = `0`;
 
 // получаем кол-во пар карт в зависимости от уровня
-startBtn.addEventListener('click', () => {
+startBtn?.addEventListener('click', () => {
     for (const radio of radios) {
         if (radio.checked === true) {
             selectedLevel = radio.value;
@@ -65,9 +66,7 @@ startBtn.addEventListener('click', () => {
 
 renderStartPage();
 
-
-
-function renderGamePage(quantity) {
+function renderGamePage(quantity: number) {
     container.innerHTML = `
                 <div class="game_container">
                     <div class="game_header">
@@ -108,7 +107,7 @@ function renderGamePage(quantity) {
     shuffle(cardsSet);
 
     // перемешиваем массив
-    function shuffle(arr) {
+    function shuffle(arr: string[]) {
         for (let i = arr.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1)); 
             [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -122,7 +121,7 @@ function renderGamePage(quantity) {
         const elem = document.createElement('img');
         elem.src = cardsSet[i];
         elem.classList.add('card');
-        gameField.appendChild(elem);   
+        gameField?.appendChild(elem);   
          
     }
     const cards = document.querySelectorAll('.card');
