@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Node } from "acorn";
-import  { compareCards } from "./compareCards.ts"
+import  { compareCards } from "./compareCards"
 
 const container = document.querySelector('.container');
 let startHtml: string = ``;
@@ -35,8 +35,10 @@ export function renderStartPage(): void {
             <button class="start_button">Старт</button>
         </div>`;
 
-    container?.innerHTML = startHtml;
-
+        if (container?.innerHTML) {
+            container.innerHTML = startHtml;
+        }
+    
     const startBtn = document.querySelector('.start_button');
     const radios: any = document.querySelectorAll('.level_options');
 
@@ -67,7 +69,8 @@ startBtn?.addEventListener('click', () => {
 renderStartPage();
 
 function renderGamePage(quantity: number) {
-    container.innerHTML = `
+    if (container?.innerHTML) {
+        container.innerHTML = `
                 <div class="game_container">
                     <div class="game_header">
                     <div class="timer">
@@ -88,7 +91,9 @@ function renderGamePage(quantity: number) {
                 </div>
                 <div class="game_field">
                 </div>`;
-    let cardsSet = [];
+    }
+    
+    let cardsSet: Array<any> = [];
 
     // заполняем массив парами карт
     for (let i = 0; i < quantity; i++) {
@@ -129,12 +134,14 @@ function renderGamePage(quantity: number) {
     // скрываем карты через 5сек
     function hideCards () {
         cards.forEach(card => {
-            card.src = '../static/images/back.jpg';
+            if (card instanceof HTMLImageElement) {
+                card.src = '../static/images/back.jpg';
+            }
         });
     }
 
     setTimeout(hideCards, 5000);
-    setTimeout(compareCards(cards, cardsSet), 5000);
+    setTimeout(() => compareCards(cards, cardsSet), 5000);
 }
 
 

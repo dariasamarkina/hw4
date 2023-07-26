@@ -1,12 +1,11 @@
 /* eslint-disable prettier/prettier */
-import { renderStartPage } from './script.ts';
+import { renderStartPage } from './script';
 
 export function compareCards(cards: any, cardsSet: any) {
-    console.log(typeof cardsSet);
     let firstCard = '';
     let secondCard = '';
     let pairs = 0;
-    let timerId: number;
+    let timerId: ReturnType<typeof setTimeout>;
     let spentTime = '';
 
     timerTimeout();
@@ -20,7 +19,7 @@ export function compareCards(cards: any, cardsSet: any) {
     // сравниваем выбранные карты и сообщаем результат
     for (let i = 0; i < cards.length; i++) {
         const card = cards[i];
-        card.addEventListener('click', (e) => {
+        card.addEventListener('click', (e: any) => {
             const target = e.target;
             target.src = cardsSet[i];
             const gameContainer = document.querySelector('.game_container');
@@ -47,8 +46,10 @@ export function compareCards(cards: any, cardsSet: any) {
                             </div>
                         </div>`;
 
-                        gameContainer.innerHTML = gameHtml;
-
+                        if (gameContainer?.innerHTML) {
+                            gameContainer.innerHTML = gameHtml!;
+                        }
+                        
                         const restartGame =
                             document.querySelector('.again_button');
                         restartGame?.addEventListener('click', () => {
@@ -68,7 +69,10 @@ export function compareCards(cards: any, cardsSet: any) {
                         </div>
                     </div>`;
 
-                    gameContainer?.innerHTML? = gameHtml;
+                    if (gameContainer?.innerHTML) {
+                        gameContainer.innerHTML = gameHtml!;
+                    }
+                    
 
                     const restartGame = document.querySelector('.again_button');
                     restartGame?.addEventListener('click', () => {
@@ -87,20 +91,34 @@ export function compareCards(cards: any, cardsSet: any) {
         const sec = document.querySelector('.timer_clock_sec');
         const min = document.querySelector('.timer_clock_min');
 
-        sec?.textContent?++;
-        if (sec?.textContent? <= 9) {
-            sec?.textContent? = '0' + sec.textContent;
-        }
-
-        if (sec?.textContent? >= 60) {
-            min?.textContent?++;
-            if (min?.textContent? < 10) {
-                min?.textContent? = '0' + min.textContent;
+        if (sec?.textContent) {
+            let secNumber = Number(sec.textContent);
+            secNumber = secNumber + 1;
+            
+            if (secNumber <= 9) {
+                sec.textContent = '0' + secNumber;
+            } else {
+                sec.textContent = '' + secNumber;
             }
-            sec?.textContent? = '00';
+    
+            if (secNumber >= 60) {
+                if (min?.textContent) {
+                    let minNumber = Number(min.textContent);
+                    minNumber = minNumber + 1;
+                    
+                    if (minNumber < 10) {
+                        min.textContent = '0' +minNumber;
+                    } else {
+                        min.textContent = '' + minNumber;
+                    }
+                    sec.textContent = '00';
+                }
+                
+            }
+            spentTime = min?.textContent + `.` + sec.textContent;
+            return spentTime; 
         }
-        spentTime = min?.textContent? + `.` + sec?.textContent?;
-        return spentTime;
+        
     }
 
     // задаем интервал изменений значений на таймере = 1 сек
