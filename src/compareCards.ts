@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { renderStartPage } from './script';
 
-export function compareCards(cards: any, cardsSet: any) {
+export function compareCards(cards: NodeListOf<Element>, cardsSet: Array<string>) {
     let firstCard = '';
     let secondCard = '';
     let pairs = 0;
@@ -19,9 +19,10 @@ export function compareCards(cards: any, cardsSet: any) {
     // сравниваем выбранные карты и сообщаем результат
     for (let i = 0; i < cards.length; i++) {
         const card = cards[i];
-        card.addEventListener('click', (e: any) => {
-            const target = e.target;
+        card.addEventListener('click', (e: Event) => {
+            const target = e.target as HTMLImageElement;
             target.src = cardsSet[i];
+            
             const gameContainer = document.querySelector('.game_container');
             let gameHtml = gameContainer?.innerHTML;
 
