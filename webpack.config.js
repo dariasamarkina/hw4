@@ -1,10 +1,11 @@
+/* eslint-disable prettier/prettier */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: './src/script.js',
+    entry: './src/script.ts',
 
     mode: isProduction ? 'production' : 'development',
 
@@ -16,6 +17,11 @@ module.exports = {
 
     module: {
         rules: [
+            {
+                test: /\.ts$/,
+                use: "ts-loader",
+                exclude: /node_modules/,
+              },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -27,6 +33,10 @@ module.exports = {
             },
         ],
     },
+
+    resolve: {
+        extensions: [".ts", ".js"],
+      },
 
     plugins: [
         new CopyPlugin({
